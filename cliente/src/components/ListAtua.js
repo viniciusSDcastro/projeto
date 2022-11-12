@@ -9,12 +9,12 @@ const ListAtua = () => {
 
     const deleteAtua = async id => {
       try {
-        const baseURL =  process.env.NODE_ENV === "production"
-        ? "/atua"
-        : "http://localhost:5000/atua";
+        // const baseURL =  process.env.NODE_ENV === "production"
+        // ? "/atua"
+        // : "http://localhost:5000/atua";
         console.log(`O ID de dentro é ${id}`)
         console.log(listaAtua)
-        const deleteTodo = await fetch(`${baseURL}/${id}`, {
+        const deleteTodo = await fetch(`/atua/${id}`, {
           method: "DELETE"
         });
         
@@ -27,10 +27,10 @@ const ListAtua = () => {
 
     const getTodos = async () => {
         try {
-          const baseURL =  process.env.NODE_ENV === "production"
-        ? "/atua"
-        : "http://localhost:5000/atua";
-          const response = await fetch(`${baseURL}`);
+        //   const baseURL =  process.env.NODE_ENV === "production"
+        // ? "/atua"
+        // : "http://localhost:5000/atua";
+          const response = await fetch(`/atua`);
           const jsonData = await response.json();
           console.log(`dados de atuação: ${jsonData}`);
           setListaAtua(jsonData);
