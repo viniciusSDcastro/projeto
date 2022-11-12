@@ -8,10 +8,10 @@ const ListAtores = () => {
 
     const deleteAtor = async id => {
       try {
-        const baseURL =  process.env.NODE_ENV === "production"
-        ? "/ator"
-        : "http://localhost:5000/ator";
-        const deleteTodo = await fetch(`${baseURL}/${id}`, {
+        // const baseURL =  process.env.NODE_ENV === "production"
+        // ? "/ator"
+        // : "http://localhost:5000/ator";
+        const deleteTodo = await fetch(`/ator/${id}`, {
           method: "DELETE"
         });
   
@@ -23,10 +23,10 @@ const ListAtores = () => {
 
     const getTodos = async () => {
         try {
-          const baseURL =  process.env.NODE_ENV === "production"
-        ? "/ator"
-        : "http://localhost:5000/ator";
-          const response = await fetch(`${baseURL}`);
+        //   const baseURL =  process.env.NODE_ENV === "production"
+        // ? "/ator"
+        // : "http://localhost:5000/ator";
+          const response = await fetch(`/ator`);
           const jsonData = await response.json();
     
           setAtores(jsonData);
