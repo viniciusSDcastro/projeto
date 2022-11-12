@@ -13,13 +13,13 @@ const EditAtua = ({ atua }) => {
     e.preventDefault();
     try {
       const body = { filme, ator, personagem };
-      const baseURL =  process.env.NODE_ENV === "production"
-        ? "/atua"
-        : "http://localhost:5000/atua";
+      // const baseURL =  process.env.NODE_ENV === "production"
+      //   ? "/atua"
+      //   : "http://localhost:5000/atua";
       //console.log(`O nome aqui é ${nome}`)
       console.log(filme, ator, personagem)
       const response = await fetch(
-        `${baseURL}/${atua.id_elenco}`,
+        `/atua/${atua.id_elenco}`,
         {
           method: "PUT",
           headers: { "Content-Type": "application/json" },
