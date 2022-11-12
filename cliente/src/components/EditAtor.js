@@ -12,11 +12,11 @@ const EditAtor = ({ ator }) => {
     try {
       const body = { nome, nascimento };
       console.log(`O nome aqui é ${nome}`)
-      const baseURL =  process.env.NODE_ENV === "production"
-        ? "/ator"
-        : "http://localhost:5000/ator";
+      // const baseURL =  process.env.NODE_ENV === "production"
+      //   ? "/ator"
+      //   : "http://localhost:5000/ator";
       const response = await fetch(
-        `${baseURL}/${ator.id}`,
+        `$/ator`,
         {
           method: "PUT",
           headers: { "Content-Type": "application/json" },
