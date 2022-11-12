@@ -7,11 +7,11 @@ const InputTodo = () => {
   const onSubmitForm = async e => {
     e.preventDefault();
     try {
-      const baseURL =  process.env.NODE_ENV === "production"
-        ? "/todos"
-        : "http://localhost:5000/todos";
+      // const baseURL =  process.env.NODE_ENV === "production"
+      //   ? "/todos"
+      //   : "http://localhost:5000/todos";
       const body = { nome, duracao };
-      const response = await fetch(`${baseURL}`, {
+      const response = await fetch(`/todos`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(body)
