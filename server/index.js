@@ -3,7 +3,10 @@ const express = require("express");
 const app = express();
 const cors = require("cors")
 const pool = require("./db");
+const path = require("path");
 const { reset } = require("nodemon");
+
+console.log(__dirname);
 
 /*
 servidor nodemon index
@@ -16,6 +19,12 @@ const port = process.env.PORT || 3001;
 
 app.use(cors());
 app.use(express.json());
+
+if (process.env.NODE_ENV === "production") {
+    //server static content
+    //npm run build
+    app.use(express.static(path.join(__dirname, "cliente/build")));
+  }
 
 app.post("/ator",async(req,res) => {
     try {
@@ -166,6 +175,11 @@ app.post("/atua",async(req,res) => {
     
     
 })
+
+app.get("*", (req, res) => {
+    res.sendFile(path.join(__dirname, "cliente/build/index.html"));
+  });
+  
 
 app.listen(port,() => {
     console.log(`o servidor está rodando na porta ${port}`)
