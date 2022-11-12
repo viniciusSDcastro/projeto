@@ -10,10 +10,10 @@ const InputAtua = () => {
         try {
             const body = { filme, ator, personagem };
             console.log(`filme = ${filme}`)
-            const baseURL =  process.env.NODE_ENV === "production"
-        ? "/atua"
-        : "http://localhost:5000/atua";
-            const response = await fetch(`${baseURL}`,{
+        //     const baseURL =  process.env.NODE_ENV === "production"
+        // ? "/atua"
+        // : "http://localhost:5000/atua";
+            const response = await fetch(`/atua`,{
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(body)
