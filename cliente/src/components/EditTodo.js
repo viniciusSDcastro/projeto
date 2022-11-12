@@ -11,11 +11,11 @@ const EditTodo = ({ todo }) => {
     e.preventDefault();
     try {
       const body = { nome, duracao };
-      const baseURL =  process.env.NODE_ENV === "production"
-        ? "/todos"
-        : "http://localhost:5000/todos";
+      // const baseURL =  process.env.NODE_ENV === "production"
+      //   ? "/todos"
+      //   : "http://localhost:5000/todos";
       const response = await fetch(
-        `${baseURL}/${todo.id}`,
+        `/todos/${todo.id}`,
         {
           method: "PUT",
           headers: { "Content-Type": "application/json" },
