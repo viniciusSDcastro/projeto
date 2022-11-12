@@ -9,11 +9,11 @@ const ListTodos = () => {
 
   const deleteTodo = async id => {
     try {
-    const baseURL =  process.env.NODE_ENV === "production"
-    ? "/todos"
-    : "http://localhost:5000/todos";
+    // const baseURL =  process.env.NODE_ENV === "production"
+    // ? "/todos"
+    // : "http://localhost:5000/todos";
       
-      const deleteTodo = await fetch(`${baseURL}/${id}`, {
+      const deleteTodo = await fetch(`/todos/${id}`, {
         method: "DELETE"
       });
 
@@ -25,10 +25,10 @@ const ListTodos = () => {
 
   const getTodos = async () => {
     try {
-      const baseURL =  process.env.NODE_ENV === "production"
-    ? "/todos"
-    : "http://localhost:5000/todos";
-      const response = await fetch(`${baseURL}`);
+    //   const baseURL =  process.env.NODE_ENV === "production"
+    // ? "/todos"
+    // : "http://localhost:5000/todos";
+      const response = await fetch(`/todos`);
       const jsonData = await response.json();
 
       setTodos(jsonData);
