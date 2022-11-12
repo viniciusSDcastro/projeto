@@ -54,7 +54,7 @@ app.get("/todos",async(req,res) =>{
         const allTodos = await pool.query("SELECT * FROM filme ORDER BY id ASC");
         res.json(allTodos.rows)
     } catch (err) {
-        console.loh(err.message)
+        console.log(err.message)
         
     }
 })
