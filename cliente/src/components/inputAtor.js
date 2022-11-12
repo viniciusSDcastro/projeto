@@ -9,10 +9,10 @@ const InputAtor = () => {
         e.preventDefault();
         try {
             const body = { nome, nascimento };
-            const baseURL =  process.env.NODE_ENV === "production"
-        ? "/ator"
-        : "http://localhost:5000/ator";
-            const response = await fetch(`${baseURL}`,{
+        //     const baseURL =  process.env.NODE_ENV === "production"
+        // ? "/ator"
+        // : "http://localhost:5000/ator";
+            const response = await fetch(`/ator`,{
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(body)
